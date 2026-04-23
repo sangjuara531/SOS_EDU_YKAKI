@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOSIALISASI EDUKASI YKAKI</title>
+<title>Sosialisasi Edukasi YKAKI – 29 April 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,18 +12,20 @@
     font-family: 'Nunito', sans-serif;
     background: #7fa9ff;
     min-height: 100vh;
+    overflow-y: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
-    overflow: hidden;
+    padding: 40px 16px 60px;
   }
 
-  /* Soft background blobs */
+  /* Fixed background blobs */
   .blob {
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     pointer-events: none;
+    z-index: 0;
   }
   .blob-1 {
     width: 380px; height: 380px;
@@ -41,15 +43,16 @@
     top: 40%; left: 5%;
   }
 
-  /* Clouds */
+  /* Fixed clouds */
   .cloud {
-    position: absolute;
+    position: fixed;
     pointer-events: none;
+    z-index: 0;
   }
 
-  /* Balloon decoration */
+  /* Fixed balloon decoration – top right */
   .decoration {
-    position: absolute;
+    position: fixed;
     top: 0; right: 0;
     width: 210px; height: 290px;
     z-index: 5;
@@ -62,7 +65,7 @@
     border: 1px solid #e8eaed;
     border-radius: 28px;
     padding: 46px 38px 42px;
-    width: 90%;
+    width: 100%;
     max-width: 460px;
     text-align: center;
     position: relative;
@@ -78,20 +81,12 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* Logo */
   .logo-ring {
-    /* width: 386px; height: 286px; */
-    /* border-radius: 50%; */
-    /* background: linear-gradient(135deg, #e8ecf5 0%, #d0d8eb 100%); */
-    /* border: 2px solid #e2e6f0; */
-    display: flex; justify-content: center;
-    /* margin: 0 auto 20px; */
-    font-size: 30px;
-    /* animation: fadeUp 0.7s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both; */
-    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: fadeUp 0.7s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
-
-  /* Replace emoji with actual logo image: */
   .logo-ring img { width: 300px; height: 200px; object-fit: contain; }
 
   h1 {
@@ -108,6 +103,7 @@
     font-size: 13px;
     color: #000000;
     font-weight: 400;
+    margin-top: 6px;
     margin-bottom: 18px;
     animation: fadeUp 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
@@ -145,10 +141,9 @@
   }
 
   .menu-btn:nth-child(1) { animation: fadeUp 0.6s 0.25s both; }
-  .menu-btn:nth-child(2) { animation: fadeUp 0.6s 0.3s both; }
+  .menu-btn:nth-child(2) { animation: fadeUp 0.6s 0.30s both; }
   .menu-btn:nth-child(3) { animation: fadeUp 0.6s 0.35s both; }
-  .menu-btn:nth-child(4) { animation: fadeUp 0.6s 0.4s both; }
-  .menu-btn:nth-child(5) { animation: fadeUp 0.6s 0.45s both; }
+  .menu-btn:nth-child(4) { animation: fadeUp 0.6s 0.40s both; }
 
   .btn-active {
     background: #f2f4f8;
@@ -170,28 +165,24 @@
     cursor: not-allowed;
   }
 
-  .btn-cta {
-    background: #e8eaf5;
-    color: #3a4070;
-    border: 1px solid #d5d9ee;
-    box-shadow: 0 2px 10px rgba(58,64,112,0.1);
+  a { text-decoration: none; }
+
+  /* Responsive tweak for small screens */
+  @media (max-width: 480px) {
+    .card { padding: 36px 24px 36px; }
+    .logo-ring img { width: 220px; height: 150px; }
+    .decoration { width: 140px; height: 200px; }
   }
-  .btn-cta:hover {
-    transform: translateY(-2px);
-    background: #e0e3f0;
-    box-shadow: 0 6px 20px rgba(58,64,112,0.16);
-  }
-  .btn-cta:active { transform: translateY(0); }
 </style>
 </head>
 <body>
 
-  <!-- Background blobs -->
+  <!-- Background blobs (fixed) -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
-  <!-- Clouds kiri -->
+  <!-- Clouds kiri (fixed) -->
   <svg class="cloud" style="top:55%;left:-18px;opacity:0.6;" width="115" height="64" viewBox="0 0 115 64">
     <ellipse cx="57" cy="48" rx="52" ry="19" fill="#fff"/>
     <ellipse cx="39" cy="34" rx="27" ry="23" fill="#fff"/>
@@ -203,7 +194,7 @@
     <ellipse cx="54" cy="27" rx="17" ry="14" fill="#fff"/>
   </svg>
 
-  <!-- Clouds kanan bawah -->
+  <!-- Clouds kanan (fixed) -->
   <svg class="cloud" style="top:60%;right:-14px;opacity:0.65;" width="125" height="68" viewBox="0 0 125 68">
     <ellipse cx="62" cy="52" rx="57" ry="20" fill="#fff"/>
     <ellipse cx="44" cy="37" rx="30" ry="25" fill="#fff"/>
@@ -215,7 +206,7 @@
     <ellipse cx="58" cy="29" rx="18" ry="15" fill="#fff"/>
   </svg>
 
-  <!-- Dekorasi balon & kado (pojok kanan atas) -->
+  <!-- Dekorasi balon & kado pojok kanan atas (fixed) -->
   <svg class="decoration" viewBox="0 0 210 290" xmlns="http://www.w3.org/2000/svg">
     <!-- Tali balon -->
     <path d="M88 128 Q86 150 82 178" stroke="#c0c5d0" stroke-width="1" fill="none"/>
@@ -223,34 +214,25 @@
     <path d="M142 112 Q140 138 136 178" stroke="#c0c5d0" stroke-width="1" fill="none"/>
     <path d="M73 135 Q71 155 68 178" stroke="#c0c5d0" stroke-width="1" fill="none"/>
     <path d="M158 124 Q157 148 153 178" stroke="#c0c5d0" stroke-width="1" fill="none"/>
-
     <!-- Balon 1 -->
     <ellipse cx="88" cy="100" rx="20" ry="25" fill="#dde2ec" stroke="#c8cdd8" stroke-width="0.8"/>
     <ellipse cx="83" cy="91" rx="6" ry="4" fill="rgba(255,255,255,0.55)" transform="rotate(-20 83 91)"/>
-
-    <!-- Balon 2 (tengah, lebih besar) -->
+    <!-- Balon 2 -->
     <ellipse cx="114" cy="92" rx="23" ry="27" fill="#e8eaf5" stroke="#d0d5e5" stroke-width="0.8"/>
     <ellipse cx="108" cy="82" rx="7" ry="5" fill="rgba(255,255,255,0.55)" transform="rotate(-20 108 82)"/>
-
     <!-- Balon 3 -->
     <ellipse cx="143" cy="85" rx="19" ry="23" fill="#f0f2f8" stroke="#dde0ec" stroke-width="0.8"/>
     <ellipse cx="138" cy="76" rx="5" ry="4" fill="rgba(255,255,255,0.55)" transform="rotate(-20 138 76)"/>
-
-    <!-- Balon 4 (kecil kiri) -->
+    <!-- Balon 4 kecil kiri -->
     <ellipse cx="71" cy="108" rx="15" ry="19" fill="#e4e7f2" stroke="#cdd1e3" stroke-width="0.8"/>
     <ellipse cx="67" cy="100" rx="4" ry="3" fill="rgba(255,255,255,0.5)" transform="rotate(-20 67 100)"/>
-
-    <!-- Balon 5 (kecil kanan) -->
+    <!-- Balon 5 kecil kanan -->
     <ellipse cx="160" cy="98" rx="17" ry="21" fill="#f5f6fb" stroke="#dde0ed" stroke-width="0.8"/>
     <ellipse cx="155" cy="89" rx="5" ry="3.5" fill="rgba(255,255,255,0.55)" transform="rotate(-20 155 89)"/>
-
-    <!-- Kotak kado - badan -->
+    <!-- Kotak kado -->
     <rect x="70" y="192" width="96" height="74" rx="7" fill="#f2f4f8" stroke="#dde0ea" stroke-width="1"/>
-    <!-- Pita vertikal -->
     <rect x="111" y="192" width="12" height="74" rx="2" fill="#c8cdd8"/>
-    <!-- Pita horizontal -->
     <rect x="70" y="224" width="96" height="12" rx="2" fill="#c8cdd8"/>
-    <!-- Tutup kado -->
     <rect x="65" y="181" width="106" height="19" rx="5" fill="#e8ecf2" stroke="#dde0ea" stroke-width="1"/>
     <rect x="111" y="181" width="12" height="19" rx="2" fill="#c8cdd8"/>
     <!-- Pita busur -->
@@ -262,20 +244,40 @@
   <!-- Card Utama -->
   <div class="card">
 
-    <!-- Logo (ganti isi dengan <img src="logo.png"> jika punya logo) -->
-    <div class="logo-ring"><img src="https://ykaki.org/wp-content/uploads/2021/10/YKAKI-Logo-2.png" alt=""></div>
+    <!-- Logo YKAKI -->
+    <div class="logo-ring">
+      <img src="https://ykaki.org/wp-content/uploads/2021/10/YKAKI-Logo-2.png" alt="Logo YKAKI">
+    </div>
 
-    <h1>Sosialisasi Edukasi Yayasan Kasih Anak Indonesia</h1>
+    <h1>Webinar Sosialisasi dan Edukasi</h1>
+    <h1>Pengenalan Gejala dan Tanda Kanker Pada Anak</h1>
+    <h1>dan</h1>
+    <h1>Pendekatan Psikososial Dalam Mendukung Anak dengan Penyakit Kronis dan Kanker</h1>
+    <h1>Di Lingkungan Dinas TNI AL</h1>
+    <h1>dalam Memperingati Hari Kartini</h1>
+    <h1>Yayasan Kasih Anak Kanker Indonesia</h1>
     <p class="date">29 April 2026</p>
     <div class="divider"></div>
 
     <div class="menu-list">
-      <button class="menu-btn btn-active" onclick="alert('Link Zoom akan dibuka')">LINK ZOOM</button>
-      <button class="menu-btn btn-active" onclick="alert('Membuka Daftar Hadir')">ABSENSI</button>
-      <button class="menu-btn btn-active" onclick="alert('Selamat Mengerjakan PRE TEST')">PRE TEST</button>
-      <button class="menu-btn btn-active" onclick="alert('Selamat Mengerjakan POST TEST')">POST TEST</button>
-      <button class="menu-btn btn-active">PENGAMBILAN SERTIFIKAT</button>
+      <!-- Ganti href="" dengan link Zoom yang sebenarnya -->
+      <a href="" target="_blank">
+        <button class="menu-btn btn-active">LINK ZOOM</button>
+      </a>
+      <!-- Registrasi & Pre-Test -->
+      <a href="https://forms.gle/VeBrbecRtRbEb6cQA" target="_blank">
+        <button class="menu-btn btn-active">Registrasi &amp; PRE-TEST</button>
+      </a>
+      <!-- Ganti href="" dengan link Post-Test yang sebenarnya -->
+      <a href="" target="_blank">
+        <button class="menu-btn btn-active">POST TEST</button>
+      </a>
+      <!-- Ganti href="" dengan link sertifikat yang sebenarnya -->
+      <a href="" target="_blank">
+        <button class="menu-btn btn-active">PENGAMBILAN SERTIFIKAT</button>
+      </a>
     </div>
+
   </div>
 
 </body>
